@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Claude Usage — Settings</title>
+    <link rel="stylesheet" href="popup.css" />
+    <style>
+      body {
+        width: 480px;
+        padding: 20px;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        margin: 14px 0 6px;
+      }
+      input {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 13px;
+        background: var(--panel);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+      }
+      .hint {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 4px;
+        line-height: 1.4;
+      }
+      .save-row {
+        margin-top: 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      #save {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #1a1915;
+        font-weight: 600;
+        padding: 8px 16px;
+      }
+      #saved {
+        font-size: 12px;
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Claude Usage — Settings</h1>
+
+    <p class="hint">
+      This extension reads your Claude Pro usage from claude.ai using your existing login —
+      no API key needed. Just stay signed in to claude.ai.
+    </p>
+
+    <label for="orgId">Organization ID (optional)</label>
+    <input id="orgId" type="text" placeholder="auto-detected if left blank" />
+    <div class="hint">
+      Leave blank to auto-detect. Only set this if auto-detection picks the wrong organization.
+      You can find it in the URL on claude.ai/settings/usage.
+    </div>
+
+    <div class="save-row">
+      <button id="save">Save</button>
+      <button id="clear">Clear</button>
+      <span id="saved"></span>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

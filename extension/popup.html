@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Claude Usage</title>
+  </head>
+  <body>
+    <header>
+      <h1>Claude Usage</h1>
+      <div class="controls">
+        <button id="refresh" title="Refresh">&#x21bb;</button>
+        <button id="settings" title="Settings">&#9881;</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="status" class="status hidden"></section>
+      <section id="limits" class="limits"></section>
+      <footer class="foot">
+        <label class="interval">
+          Refresh
+          <select id="interval" title="Auto-refresh interval">
+            <option value="30">30s</option>
+            <option value="60">1m</option>
+            <option value="300">5m</option>
+            <option value="600">10m</option>
+            <option value="1800">30m</option>
+          </select>
+        </label>
+        <span id="updated" class="updated"></span>
+      </footer>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
