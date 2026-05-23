@@ -95,6 +95,8 @@ extension/
 
 If this extension is useful to you, you can support its development:
 
-<a href="https://buymeacoffee.com/rajaabines2" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50" width="210" />
-</a>
+<p align="center">
+  <a href="https://buymeacoffee.com/rajaabines2" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="80" width="340" />
+  </a>
+</p>
