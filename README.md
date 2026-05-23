@@ -4,7 +4,11 @@ A lightweight Chrome extension that shows your **Claude Pro plan usage limits** 
 session, weekly limits, and reset times — in the toolbar, with a live color-coded badge on
 the icon. The same numbers you'd see on **claude.ai → Settings → Usage**, one click away.
 
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/rajaabines2)
+<p align="center">
+  <a href="https://buymeacoffee.com/rajaabines2" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="80" width="340" />
+  </a>
+</p>
 
 > **Unofficial.** This project is not affiliated with, endorsed by, or sponsored by Anthropic.
 > It reads your own usage data from claude.ai using your existing login. It relies on an
