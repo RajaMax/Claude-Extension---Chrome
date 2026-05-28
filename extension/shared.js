@@ -57,11 +57,11 @@ export function activeLimits(usage) {
   );
 }
 
-// The limit closest to its cap — the most useful single number for the badge.
-export function peakLimit(usage) {
-  const items = activeLimits(usage);
-  if (items.length === 0) return null;
-  return items.reduce((max, x) => (x.utilization > max.utilization ? x : max), items[0]);
+// The current session (daily) limit — the only thing shown on the toolbar badge.
+export function sessionLimit(usage) {
+  const item = usage?.five_hour;
+  if (!item || typeof item.utilization !== "number") return null;
+  return { key: "five_hour", label: "Current session", ...item };
 }
 
 export function badgeColor(pct) {
@@ -80,17 +80,15 @@ async function setBadge(text, color, title) {
 }
 
 // Write the badge from an already-fetched usage object (no extra request).
+// The badge tracks only the current session (daily) limit.
 export async function applyBadge(usage) {
-  const peak = peakLimit(usage);
-  if (!peak) {
-    await setBadge("", "", "Claude Usage — no data");
+  const session = sessionLimit(usage);
+  if (!session) {
+    await setBadge("", "", "Claude Usage — no session data");
     return;
   }
-  const pct = Math.round(peak.utilization);
-  const breakdown = activeLimits(usage)
-    .map((x) => `${x.label}: ${Math.round(x.utilization)}%`)
-    .join("\n");
-  await setBadge(String(pct), badgeColor(pct), `Claude Usage\n${breakdown}`);
+  const pct = Math.round(session.utilization);
+  await setBadge(String(pct), badgeColor(pct), `Claude Usage — current session: ${pct}% used`);
 }
 
 // Fetch fresh usage and update the badge; used by the background poller.
